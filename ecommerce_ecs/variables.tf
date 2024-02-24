@@ -9,3 +9,13 @@ variable "private_data_subnet_az1_cidr" {}
 variable "private_data_subnet_az2_cidr" {}
 variable "domain_name" {}
 variable "alternative_name" {}
+variable "db_instance_identifier" {}
+variable "db_username" {}
+variable "db_password" {}
+variable "instance_class" {}
+variable "allocated_storage" {}
+variable "db_subnet_group_name" {}
+variable "vpc_security_group_ids" {}
+variable "availability_zone" {}
+variable "db_name" {}
+variable "skip_final_snapshot" {}

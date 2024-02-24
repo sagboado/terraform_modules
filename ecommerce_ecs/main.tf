@@ -67,3 +67,19 @@ module "application_load_balancer" {
   vpc_id                = module.vpc.vpc_id
   certificate_arn       = module.acm.certificate_arn
 }
+
+# create rds
+
+module "my_rds_instance" {
+  source                   = "../modules/rds"
+  db_instance_identifier  = var.db_instance_identifier
+  db_username             = var.db_username
+  db_password             = var.db_password
+  instance_class          = var.instance_class
+  allocated_storage       = var.allocated_storage
+  db_subnet_group_name    = var.db_subnet_group_name
+  vpc_security_group_ids  = var.vpc_security_group_ids
+  availability_zone       = var.private_data_subnet_az1_cidr
+  db_name                 = var.db_name
+  skip_final_snapshot     = var.skip_final_snapshot
+}
